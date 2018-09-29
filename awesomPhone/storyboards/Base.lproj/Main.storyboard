@@ -12,7 +12,7 @@
         <scene sceneID="QHm-xC-Afq">
             <objects>
                 <tabBarController id="lej-5U-oyV" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xR3-Fs-Dgi">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="xR3-Fs-Dgi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -36,10 +36,10 @@
             </objects>
             <point key="canvasLocation" x="-1216" y="184"/>
         </scene>
-        <!--favorite-->
+        <!--Favorite-->
         <scene sceneID="epj-XR-5BB">
             <objects>
-                <viewControllerPlaceholder storyboardName="favorite" id="rpm-E8-mF0" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Favorite" id="rpm-E8-mF0" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Rha-mK-6Gk"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hvZ-cv-3sv" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -31,7 +31,9 @@ struct PhoneModel {
         isFavorite = entity.isFavorite
         
         let imageEntities: [PhoneImageEntity] = entity.images?.allObjects as! [PhoneImageEntity]
-        imagePaths = imageEntities.map { imageEntity in
+        imagePaths = imageEntities.sorted(by: { (previous, next) in
+            previous.id < next.id
+        }).map { imageEntity in
             imageEntity.url!
         }
         
