@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29A76691D8E7ED01DC30DDBA /* Pods_awesomPhone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436513F7E118B6E605CDC7A1 /* Pods_awesomPhone.framework */; };
 		955487ED215FA2DD00C220C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955487EC215FA2DD00C220C3 /* AppDelegate.swift */; };
 		955487EF215FA2DD00C220C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955487EE215FA2DD00C220C3 /* ViewController.swift */; };
 		955487F2215FA2DD00C220C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955487F0215FA2DD00C220C3 /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		436513F7E118B6E605CDC7A1 /* Pods_awesomPhone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_awesomPhone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50C2D69F7678D32DA4F294B2 /* Pods-awesomPhone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-awesomPhone.release.xcconfig"; path = "Pods/Target Support Files/Pods-awesomPhone/Pods-awesomPhone.release.xcconfig"; sourceTree = "<group>"; };
 		955487E9215FA2DD00C220C3 /* awesomPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = awesomPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		955487EC215FA2DD00C220C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		955487EE215FA2DD00C220C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		955487F3215FA2DE00C220C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		955487F6215FA2DE00C220C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		955487F8215FA2DE00C220C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E774C66574BB7EEAAF1D1393 /* Pods-awesomPhone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-awesomPhone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-awesomPhone/Pods-awesomPhone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29A76691D8E7ED01DC30DDBA /* Pods_awesomPhone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23342E57FFDF62890819661C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E774C66574BB7EEAAF1D1393 /* Pods-awesomPhone.debug.xcconfig */,
+				50C2D69F7678D32DA4F294B2 /* Pods-awesomPhone.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		955487E0215FA2DD00C220C3 = {
 			isa = PBXGroup;
 			children = (
 				955487EB215FA2DD00C220C3 /* awesomPhone */,
 				955487EA215FA2DD00C220C3 /* Products */,
+				23342E57FFDF62890819661C /* Pods */,
+				97280A86F27DB9873F0D1E8B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +80,14 @@
 			path = awesomPhone;
 			sourceTree = "<group>";
 		};
+		97280A86F27DB9873F0D1E8B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				436513F7E118B6E605CDC7A1 /* Pods_awesomPhone.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,6 +95,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 955487FB215FA2DE00C220C3 /* Build configuration list for PBXNativeTarget "awesomPhone" */;
 			buildPhases = (
+				D873353D4F778227418B65AC /* [CP] Check Pods Manifest.lock */,
 				955487E5215FA2DD00C220C3 /* Sources */,
 				955487E6215FA2DD00C220C3 /* Frameworks */,
 				955487E7215FA2DD00C220C3 /* Resources */,
@@ -129,6 +154,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D873353D4F778227418B65AC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-awesomPhone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		955487E5215FA2DD00C220C3 /* Sources */ = {
@@ -280,6 +326,7 @@
 		};
 		955487FC215FA2DE00C220C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E774C66574BB7EEAAF1D1393 /* Pods-awesomPhone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +345,7 @@
 		};
 		955487FD215FA2DE00C220C3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50C2D69F7678D32DA4F294B2 /* Pods-awesomPhone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
