@@ -6,5 +6,8 @@ target 'awesomPhone' do
   use_frameworks!
 
   # Pods for awesomPhone
+  pod 'Alamofire', '~> 4'
+  pod 'ObjectMapper', '~> 3'
+  pod 'Kingfisher', '~> 4'
 
 end
