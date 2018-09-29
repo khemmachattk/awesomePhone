@@ -12,11 +12,19 @@
 		955487F2215FA2DD00C220C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955487F0215FA2DD00C220C3 /* Main.storyboard */; };
 		955487F4215FA2DE00C220C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 955487F3215FA2DE00C220C3 /* Assets.xcassets */; };
 		955487F7215FA2DE00C220C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955487F5215FA2DE00C220C3 /* LaunchScreen.storyboard */; };
-		95548808215FA5AC00C220C3 /* phoneList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95548807215FA5AC00C220C3 /* phoneList.storyboard */; };
+		95548808215FA5AC00C220C3 /* All.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95548807215FA5AC00C220C3 /* All.storyboard */; };
 		9554880A215FA5BA00C220C3 /* favorite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95548809215FA5BA00C220C3 /* favorite.storyboard */; };
 		9554880D215FA84800C220C3 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9554880B215FA84800C220C3 /* NibLoadableView.swift */; };
 		9554880E215FA84800C220C3 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9554880C215FA84800C220C3 /* ReusableView.swift */; };
 		95548810215FA8EA00C220C3 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9554880F215FA8EA00C220C3 /* BaseRouter.swift */; };
+		95548812215FAC0000C220C3 /* AllTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95548811215FAC0000C220C3 /* AllTableViewController.swift */; };
+		95548814215FAC1500C220C3 /* AllViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95548813215FAC1500C220C3 /* AllViewModel.swift */; };
+		9554881A215FAC8800C220C3 /* PhoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95548818215FAC8800C220C3 /* PhoneTableViewCell.swift */; };
+		9554881B215FAC8800C220C3 /* PhoneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95548819215FAC8800C220C3 /* PhoneTableViewCell.xib */; };
+		9554881D215FB01F00C220C3 /* UITableView+ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9554881C215FB01F00C220C3 /* UITableView+ReusableView.swift */; };
+		9554881F215FB10700C220C3 /* BaseCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9554881E215FB10700C220C3 /* BaseCellItem.swift */; };
+		95548823215FB69800C220C3 /* FavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95548822215FB69800C220C3 /* FavoriteTableViewController.swift */; };
+		95548825215FB6A200C220C3 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95548824215FB6A200C220C3 /* FavoriteViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,11 +36,19 @@
 		955487F3215FA2DE00C220C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		955487F6215FA2DE00C220C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		955487F8215FA2DE00C220C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		95548807215FA5AC00C220C3 /* phoneList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = phoneList.storyboard; sourceTree = "<group>"; };
+		95548807215FA5AC00C220C3 /* All.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = All.storyboard; sourceTree = "<group>"; };
 		95548809215FA5BA00C220C3 /* favorite.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = favorite.storyboard; sourceTree = "<group>"; };
 		9554880B215FA84800C220C3 /* NibLoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
 		9554880C215FA84800C220C3 /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		9554880F215FA8EA00C220C3 /* BaseRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		95548811215FAC0000C220C3 /* AllTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTableViewController.swift; sourceTree = "<group>"; };
+		95548813215FAC1500C220C3 /* AllViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllViewModel.swift; sourceTree = "<group>"; };
+		95548818215FAC8800C220C3 /* PhoneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTableViewCell.swift; sourceTree = "<group>"; };
+		95548819215FAC8800C220C3 /* PhoneTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneTableViewCell.xib; sourceTree = "<group>"; };
+		9554881C215FB01F00C220C3 /* UITableView+ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+ReusableView.swift"; sourceTree = "<group>"; };
+		9554881E215FB10700C220C3 /* BaseCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCellItem.swift; sourceTree = "<group>"; };
+		95548822215FB69800C220C3 /* FavoriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewController.swift; sourceTree = "<group>"; };
+		95548824215FB6A200C220C3 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		E774C66574BB7EEAAF1D1393 /* Pods-awesomPhone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-awesomPhone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-awesomPhone/Pods-awesomPhone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +94,7 @@
 		955487EB215FA2DD00C220C3 /* awesomPhone */ = {
 			isa = PBXGroup;
 			children = (
+				95548816215FAC3E00C220C3 /* commons */,
 				95548806215FA4CA00C220C3 /* reducers */,
 				95548805215FA4AA00C220C3 /* states */,
 				95548804215FA47500C220C3 /* actions */,
@@ -97,6 +114,8 @@
 		955487FE215FA43600C220C3 /* scenes */ = {
 			isa = PBXGroup;
 			children = (
+				95548821215FB4B400C220C3 /* favorite */,
+				95548820215FB49F00C220C3 /* all */,
 			);
 			path = scenes;
 			sourceTree = "<group>";
@@ -121,6 +140,7 @@
 				9554880F215FA8EA00C220C3 /* BaseRouter.swift */,
 				9554880B215FA84800C220C3 /* NibLoadableView.swift */,
 				9554880C215FA84800C220C3 /* ReusableView.swift */,
+				9554881E215FB10700C220C3 /* BaseCellItem.swift */,
 			);
 			path = protocols;
 			sourceTree = "<group>";
@@ -128,6 +148,7 @@
 		95548802215FA45000C220C3 /* extensions */ = {
 			isa = PBXGroup;
 			children = (
+				9554881C215FB01F00C220C3 /* UITableView+ReusableView.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -137,7 +158,7 @@
 			children = (
 				955487F5215FA2DE00C220C3 /* LaunchScreen.storyboard */,
 				955487F0215FA2DD00C220C3 /* Main.storyboard */,
-				95548807215FA5AC00C220C3 /* phoneList.storyboard */,
+				95548807215FA5AC00C220C3 /* All.storyboard */,
 				95548809215FA5BA00C220C3 /* favorite.storyboard */,
 			);
 			path = storyboards;
@@ -162,6 +183,41 @@
 			children = (
 			);
 			path = reducers;
+			sourceTree = "<group>";
+		};
+		95548816215FAC3E00C220C3 /* commons */ = {
+			isa = PBXGroup;
+			children = (
+				95548817215FAC4500C220C3 /* cells */,
+			);
+			path = commons;
+			sourceTree = "<group>";
+		};
+		95548817215FAC4500C220C3 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				95548818215FAC8800C220C3 /* PhoneTableViewCell.swift */,
+				95548819215FAC8800C220C3 /* PhoneTableViewCell.xib */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		95548820215FB49F00C220C3 /* all */ = {
+			isa = PBXGroup;
+			children = (
+				95548811215FAC0000C220C3 /* AllTableViewController.swift */,
+				95548813215FAC1500C220C3 /* AllViewModel.swift */,
+			);
+			path = all;
+			sourceTree = "<group>";
+		};
+		95548821215FB4B400C220C3 /* favorite */ = {
+			isa = PBXGroup;
+			children = (
+				95548822215FB69800C220C3 /* FavoriteTableViewController.swift */,
+				95548824215FB6A200C220C3 /* FavoriteViewModel.swift */,
+			);
+			path = favorite;
 			sourceTree = "<group>";
 		};
 		97280A86F27DB9873F0D1E8B /* Frameworks */ = {
@@ -233,9 +289,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				955487F7215FA2DE00C220C3 /* LaunchScreen.storyboard in Resources */,
-				95548808215FA5AC00C220C3 /* phoneList.storyboard in Resources */,
+				95548808215FA5AC00C220C3 /* All.storyboard in Resources */,
 				955487F4215FA2DE00C220C3 /* Assets.xcassets in Resources */,
 				955487F2215FA2DD00C220C3 /* Main.storyboard in Resources */,
+				9554881B215FAC8800C220C3 /* PhoneTableViewCell.xib in Resources */,
 				9554880A215FA5BA00C220C3 /* favorite.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,9 +350,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				9554880E215FA84800C220C3 /* ReusableView.swift in Sources */,
+				9554881F215FB10700C220C3 /* BaseCellItem.swift in Sources */,
+				95548814215FAC1500C220C3 /* AllViewModel.swift in Sources */,
+				9554881A215FAC8800C220C3 /* PhoneTableViewCell.swift in Sources */,
+				9554881D215FB01F00C220C3 /* UITableView+ReusableView.swift in Sources */,
+				95548823215FB69800C220C3 /* FavoriteTableViewController.swift in Sources */,
+				95548812215FAC0000C220C3 /* AllTableViewController.swift in Sources */,
 				9554880D215FA84800C220C3 /* NibLoadableView.swift in Sources */,
 				955487ED215FA2DD00C220C3 /* AppDelegate.swift in Sources */,
 				95548810215FA8EA00C220C3 /* BaseRouter.swift in Sources */,
+				95548825215FB6A200C220C3 /* FavoriteViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -26,15 +26,15 @@
             </objects>
             <point key="canvasLocation" x="-854" y="-271"/>
         </scene>
-        <!--phoneList-->
+        <!--All-->
         <scene sceneID="OEf-do-wBW">
             <objects>
-                <viewControllerPlaceholder storyboardName="phoneList" id="3zK-xL-S7f" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="All" id="3zK-xL-S7f" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="SPr-rg-1yn"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BbL-8g-HlN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1234" y="184"/>
+            <point key="canvasLocation" x="-1216" y="184"/>
         </scene>
         <!--favorite-->
         <scene sceneID="epj-XR-5BB">
