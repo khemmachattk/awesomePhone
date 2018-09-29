@@ -18,7 +18,7 @@ class PhoneTableViewCell: UITableViewCell, NibLoadable {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     
-    private var favoriteHandler: FavoriteHandler!
+    private var favoriteHandler: FavoriteHandler?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,7 +28,7 @@ class PhoneTableViewCell: UITableViewCell, NibLoadable {
 
 // MARK: - Configure
 extension PhoneTableViewCell {
-    func configure(item: CellItem, favoriteHandler: @escaping FavoriteHandler) {
+    func configure(item: CellItem, favoriteHandler: FavoriteHandler? = nil) {
         self.favoriteHandler = favoriteHandler
         
         thumbnailImageView.load(item.thumbnailUrl)
@@ -43,7 +43,7 @@ extension PhoneTableViewCell {
 // MARK: - Action
 private extension PhoneTableViewCell {
     @IBAction func favorite(_ sender: Any) {
-        favoriteHandler(self)
+        favoriteHandler?(self)
     }
 }
 

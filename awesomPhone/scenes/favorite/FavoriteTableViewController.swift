@@ -50,9 +50,7 @@ private extension FavoriteTableViewController {
     func configure(_ cell: UITableViewCell, with item: BaseCellItem) {
         switch (cell, item) {
         case (let cell as PhoneTableViewCell, let item as PhoneTableViewCell.CellItem):
-            cell.configure(item: item, favoriteHandler: { cell in
-                
-            })
+            cell.configure(item: item)
         default:
             break
         }

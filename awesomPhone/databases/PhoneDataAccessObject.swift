@@ -25,7 +25,7 @@ class PhoneDataAccessObject {
 
 // MARK: - 
 extension PhoneDataAccessObject {
-    func createOrUpdate(_ phones: [PhoneModel]) {
+    func createOrUpdate(_ phones: [PhoneModel]) -> [PhoneModel] {
         phones.forEach { phone in
             if let currentPhoneEntity = fetchPhoneEntity(id: phone.id) {
                 currentPhoneEntity.from(phone)
@@ -37,11 +37,13 @@ extension PhoneDataAccessObject {
         }
         
         try! manageContext.save()
+        
+        return fetchPhones(isFavorite: false)
     }
     
-    func createOrUpdate(_ images: [PhoneImageModel], to phoneId: Int) {
+    func createOrUpdate(_ images: [PhoneImageModel], to phoneId: Int) -> PhoneModel? {
         guard let currentPhoneEntity = fetchPhoneEntity(id: phoneId) else {
-            return
+            return nil
         }
         
         currentPhoneEntity.images = []
@@ -58,6 +60,8 @@ extension PhoneDataAccessObject {
         }
         
         try! manageContext.save()
+        
+        return fetchPhone(id: phoneId)
     }
     
     func favorite(_ isFavorite: Bool, phoneId: Int) {
