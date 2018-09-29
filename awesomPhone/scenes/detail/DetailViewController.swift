@@ -9,11 +9,11 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-    @IBOutlet weak var sliderCollectionView: UICollectionView!
     @IBOutlet weak var sliderHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var imageCarouselView: ImageCarouselView!
     
     var viewModel: DetailViewModel!
     
@@ -21,6 +21,12 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         setupView()
+        fetchImages()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         updateView()
     }
 }
@@ -39,6 +45,29 @@ private extension DetailViewController {
         descriptionLabel.text = viewModel.phone?.description
         ratingLabel.text = "Rating: \(viewModel.phone?.rating.shortForm() ?? "0")"
         priceLabel.text = "Price: $\(viewModel.phone?.price.shortForm() ?? "0")"
+        imageCarouselView.configure(urls: viewModel.phone?.imagePaths ?? [])
+    }
+    
+    func fetchImages() {
+        viewModel.fetchImages { [weak self] (phone, error) in
+            self?.stopLoading()
+            
+            guard let phone = phone, error == nil else {
+                self?.presentAlert(title: "Error", message: error!.message)
+                return
+            }
+            
+            self?.viewModel.updateItem(phone)
+            self?.updateView()
+        }
+    }
+    
+    func startLoading() {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+    
+    func stopLoading() {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
 }
 

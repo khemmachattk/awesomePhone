@@ -21,27 +21,23 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kOg-mS-5Rc">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="208"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="248"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="LQB-Hf-2rS">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="208"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="248"/>
                                                 <subviews>
-                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Oom-fr-32s">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
-                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xhF-uV-7FI" customClass="ImageCarouselView" customModule="awesomPhone" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="160" id="DBu-pz-rBq"/>
+                                                            <constraint firstAttribute="height" constant="200" id="hbL-jI-4kM"/>
                                                         </constraints>
-                                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0A8-LK-REr">
-                                                            <size key="itemSize" width="50" height="50"/>
-                                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                        </collectionViewFlowLayout>
-                                                        <cells/>
-                                                    </collectionView>
+                                                        <connections>
+                                                            <outlet property="pageControl" destination="hrc-Rh-nYA" id="xHU-es-R0k"/>
+                                                        </connections>
+                                                    </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Cjo-BU-a9g">
-                                                        <rect key="frame" x="0.0" y="175" width="375" height="33"/>
+                                                        <rect key="frame" x="0.0" y="215" width="375" height="33"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9X-3W-yFn">
                                                                 <rect key="frame" x="15" y="0.0" width="345" height="18"/>
@@ -85,13 +81,20 @@
                                                     <constraint firstItem="PeV-8T-oHK" firstAttribute="leading" secondItem="M9K-EO-ya6" secondAttribute="leading" id="xJu-yc-3ba"/>
                                                 </constraints>
                                             </view>
+                                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="hrc-Rh-nYA">
+                                                <rect key="frame" x="168" y="163" width="39" height="37"/>
+                                                <color key="pageIndicatorTintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <color key="currentPageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </pageControl>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="hrc-Rh-nYA" firstAttribute="centerX" secondItem="xhF-uV-7FI" secondAttribute="centerX" id="HfY-dC-aZk"/>
                                             <constraint firstItem="LQB-Hf-2rS" firstAttribute="top" secondItem="kOg-mS-5Rc" secondAttribute="top" id="J96-c4-VXn"/>
                                             <constraint firstAttribute="trailing" secondItem="M9K-EO-ya6" secondAttribute="trailing" id="XQM-dT-lAd"/>
                                             <constraint firstAttribute="height" secondItem="LQB-Hf-2rS" secondAttribute="height" id="c3j-rY-BdF"/>
                                             <constraint firstAttribute="trailing" secondItem="LQB-Hf-2rS" secondAttribute="trailing" id="duF-F7-yeK"/>
+                                            <constraint firstItem="hrc-Rh-nYA" firstAttribute="bottom" secondItem="xhF-uV-7FI" secondAttribute="bottom" id="e9z-1j-wcn"/>
                                             <constraint firstItem="M9K-EO-ya6" firstAttribute="top" secondItem="kOg-mS-5Rc" secondAttribute="top" id="geQ-OY-Loc"/>
                                             <constraint firstItem="LQB-Hf-2rS" firstAttribute="leading" secondItem="kOg-mS-5Rc" secondAttribute="leading" id="pFC-Bt-sbI"/>
                                             <constraint firstItem="M9K-EO-ya6" firstAttribute="leading" secondItem="kOg-mS-5Rc" secondAttribute="leading" id="yF7-Gm-1HW"/>
@@ -121,10 +124,10 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="descriptionLabel" destination="v9X-3W-yFn" id="JY9-Ba-sdL"/>
+                        <outlet property="imageCarouselView" destination="xhF-uV-7FI" id="AbY-Ol-g5I"/>
                         <outlet property="priceLabel" destination="JTE-Y7-NWb" id="Tw3-J3-3tl"/>
                         <outlet property="ratingLabel" destination="AlJ-QV-bk3" id="a7U-Ie-eEi"/>
-                        <outlet property="sliderCollectionView" destination="Oom-fr-32s" id="s7G-T9-6UA"/>
-                        <outlet property="sliderHeightConstraint" destination="DBu-pz-rBq" id="36I-ls-ioQ"/>
+                        <outlet property="sliderHeightConstraint" destination="hbL-jI-4kM" id="wMY-4z-04T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="70x-3o-TRR" userLabel="First Responder" sceneMemberID="firstResponder"/>

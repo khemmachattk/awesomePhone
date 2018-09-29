@@ -14,6 +14,12 @@ extension UIImageView {
             return
         }
         
-        kf.setImage(with: URL(string: path))
+        var newPath = path
+        
+        if (!newPath.starts(with: "http://") && !newPath.starts(with: "https://")) {
+            newPath = "http://\(newPath)"
+        }
+        
+        kf.setImage(with: URL(string: newPath))
     }
 }
