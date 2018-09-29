@@ -9,6 +9,8 @@
 import UIKit
 
 class PhoneTableViewCell: UITableViewCell, NibLoadable {
+    typealias FavoriteHandler = (PhoneTableViewCell) -> Void
+    
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var favoriteImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -16,15 +18,32 @@ class PhoneTableViewCell: UITableViewCell, NibLoadable {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     
+    private var favoriteHandler: FavoriteHandler!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+    
     }
 }
 
 // MARK: - Configure
 extension PhoneTableViewCell {
-    func configure(item: CellItem) {
+    func configure(item: CellItem, favoriteHandler: @escaping FavoriteHandler) {
+        self.favoriteHandler = favoriteHandler
         
+        thumbnailImageView.load(item.thumbnailUrl)
+        titleLabel.text = item.title
+        descriptionLabel.text = item.description
+        priceLabel.text = "Price: $\(item.price)"
+        ratingLabel.text = "Rating: \(item.rating)"
+        favoriteImageView.fillColor(with: item.isFavorite ? .blue : .lightGray)
+    }
+}
+
+// MARK: - Action
+private extension PhoneTableViewCell {
+    @IBAction func favorite(_ sender: Any) {
+        favoriteHandler(self)
     }
 }
 
@@ -34,6 +53,12 @@ extension PhoneTableViewCell {
         var cellIdentifier: String {
             return defaultReuseIdentifier
         }
-        var identifier: String
+        let identifier: String
+        let thumbnailUrl: String
+        let title: String
+        let description: String
+        let price: Double
+        let rating: Double
+        let isFavorite: Bool
     }
 }

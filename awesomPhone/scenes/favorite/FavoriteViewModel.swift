@@ -9,13 +9,5 @@
 import Foundation
 
 struct FavoriteViewModel {
-    let items: [BaseCellItem] = [
-        PhoneTableViewCell.CellItem(identifier: "1"),
-        PhoneTableViewCell.CellItem(identifier: "1"),
-        PhoneTableViewCell.CellItem(identifier: "1"),
-        PhoneTableViewCell.CellItem(identifier: "1"),
-        PhoneTableViewCell.CellItem(identifier: "1"),
-        PhoneTableViewCell.CellItem(identifier: "1"),
-        PhoneTableViewCell.CellItem(identifier: "1")
-    ]
+    let items: [BaseCellItem] = []
 }

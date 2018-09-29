@@ -21,7 +21,7 @@
                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="XMo-wZ-pnk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="133.5"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ykm-g9-nXC">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ykm-g9-nXC">
                                 <rect key="frame" x="15" y="27" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="I1h-v3-tE6"/>
@@ -79,6 +79,9 @@
                     </stackView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltO-Pa-yfk" userLabel="favorite button">
                         <rect key="frame" x="280" y="22.5" width="30" height="30"/>
+                        <connections>
+                            <action selector="favorite:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="n4Q-mw-79O"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

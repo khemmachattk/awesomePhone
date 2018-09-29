@@ -15,6 +15,7 @@ class AllViewController: UITableViewController {
         super.viewDidLoad()
         
         setupView()
+        updateView()
     }
 }
 
@@ -26,6 +27,24 @@ private extension AllViewController {
     
     func setupTableView() {
         tableView.register(PhoneTableViewCell.self)
+    }
+}
+
+// MARK: - Update view
+private extension AllViewController {
+    func updateView() {
+        fetchAllPhones()
+    }
+    
+    func fetchAllPhones() {
+        viewModel.fetchAllPhones { [weak self] (phones, error) in
+            guard let phones = phones, error == nil else {
+                return
+            }
+            
+            self?.viewModel.updateItems(phones)
+            self?.tableView.reloadData()
+        }
     }
 }
 
@@ -50,7 +69,9 @@ private extension AllViewController {
     func configure(_ cell: UITableViewCell, with item: BaseCellItem) {
         switch (cell, item) {
         case (let cell as PhoneTableViewCell, let item as PhoneTableViewCell.CellItem):
-            cell.configure(item: item)
+            cell.configure(item: item, favoriteHandler: { cell in
+                
+            })
         default:
             break
         }

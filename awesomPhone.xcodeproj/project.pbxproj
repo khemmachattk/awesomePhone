@@ -25,6 +25,13 @@
 		9554881F215FB10700C220C3 /* BaseCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9554881E215FB10700C220C3 /* BaseCellItem.swift */; };
 		95548823215FB69800C220C3 /* FavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95548822215FB69800C220C3 /* FavoriteTableViewController.swift */; };
 		95548825215FB6A200C220C3 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95548824215FB6A200C220C3 /* FavoriteViewModel.swift */; };
+		95548828215FB76300C220C3 /* PhoneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95548827215FB76300C220C3 /* PhoneRouter.swift */; };
+		9554882A215FB84500C220C3 /* PhoneService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95548829215FB84500C220C3 /* PhoneService.swift */; };
+		9554882C215FB97E00C220C3 /* PhoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9554882B215FB97E00C220C3 /* PhoneModel.swift */; };
+		9554882E215FBB8500C220C3 /* PhoneImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9554882D215FBB8500C220C3 /* PhoneImageModel.swift */; };
+		95548830215FBC7F00C220C3 /* ResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9554882F215FBC7F00C220C3 /* ResponseError.swift */; };
+		95548832215FC44000C220C3 /* ImageView+Load.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95548831215FC44000C220C3 /* ImageView+Load.swift */; };
+		95548834215FC53400C220C3 /* UIImageView+FillColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95548833215FC53400C220C3 /* UIImageView+FillColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +56,13 @@
 		9554881E215FB10700C220C3 /* BaseCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCellItem.swift; sourceTree = "<group>"; };
 		95548822215FB69800C220C3 /* FavoriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewController.swift; sourceTree = "<group>"; };
 		95548824215FB6A200C220C3 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
+		95548827215FB76300C220C3 /* PhoneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneRouter.swift; sourceTree = "<group>"; };
+		95548829215FB84500C220C3 /* PhoneService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneService.swift; sourceTree = "<group>"; };
+		9554882B215FB97E00C220C3 /* PhoneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneModel.swift; sourceTree = "<group>"; };
+		9554882D215FBB8500C220C3 /* PhoneImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneImageModel.swift; sourceTree = "<group>"; };
+		9554882F215FBC7F00C220C3 /* ResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseError.swift; sourceTree = "<group>"; };
+		95548831215FC44000C220C3 /* ImageView+Load.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+Load.swift"; sourceTree = "<group>"; };
+		95548833215FC53400C220C3 /* UIImageView+FillColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+FillColor.swift"; sourceTree = "<group>"; };
 		E774C66574BB7EEAAF1D1393 /* Pods-awesomPhone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-awesomPhone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-awesomPhone/Pods-awesomPhone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +137,8 @@
 		955487FF215FA43C00C220C3 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				9554882B215FB97E00C220C3 /* PhoneModel.swift */,
+				9554882D215FBB8500C220C3 /* PhoneImageModel.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -130,6 +146,9 @@
 		95548800215FA44100C220C3 /* services */ = {
 			isa = PBXGroup;
 			children = (
+				95548826215FB75300C220C3 /* routers */,
+				95548829215FB84500C220C3 /* PhoneService.swift */,
+				9554882F215FBC7F00C220C3 /* ResponseError.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -149,6 +168,8 @@
 			isa = PBXGroup;
 			children = (
 				9554881C215FB01F00C220C3 /* UITableView+ReusableView.swift */,
+				95548831215FC44000C220C3 /* ImageView+Load.swift */,
+				95548833215FC53400C220C3 /* UIImageView+FillColor.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -218,6 +239,14 @@
 				95548824215FB6A200C220C3 /* FavoriteViewModel.swift */,
 			);
 			path = favorite;
+			sourceTree = "<group>";
+		};
+		95548826215FB75300C220C3 /* routers */ = {
+			isa = PBXGroup;
+			children = (
+				95548827215FB76300C220C3 /* PhoneRouter.swift */,
+			);
+			path = routers;
 			sourceTree = "<group>";
 		};
 		97280A86F27DB9873F0D1E8B /* Frameworks */ = {
@@ -355,11 +384,18 @@
 				9554881A215FAC8800C220C3 /* PhoneTableViewCell.swift in Sources */,
 				9554881D215FB01F00C220C3 /* UITableView+ReusableView.swift in Sources */,
 				95548823215FB69800C220C3 /* FavoriteTableViewController.swift in Sources */,
+				95548828215FB76300C220C3 /* PhoneRouter.swift in Sources */,
 				95548812215FAC0000C220C3 /* AllTableViewController.swift in Sources */,
+				9554882C215FB97E00C220C3 /* PhoneModel.swift in Sources */,
+				95548834215FC53400C220C3 /* UIImageView+FillColor.swift in Sources */,
 				9554880D215FA84800C220C3 /* NibLoadableView.swift in Sources */,
 				955487ED215FA2DD00C220C3 /* AppDelegate.swift in Sources */,
 				95548810215FA8EA00C220C3 /* BaseRouter.swift in Sources */,
+				95548832215FC44000C220C3 /* ImageView+Load.swift in Sources */,
 				95548825215FB6A200C220C3 /* FavoriteViewModel.swift in Sources */,
+				95548830215FBC7F00C220C3 /* ResponseError.swift in Sources */,
+				9554882E215FBB8500C220C3 /* PhoneImageModel.swift in Sources */,
+				9554882A215FB84500C220C3 /* PhoneService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
