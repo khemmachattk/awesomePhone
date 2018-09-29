@@ -33,6 +33,9 @@
 		95548832215FC44000C220C3 /* ImageView+Load.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95548831215FC44000C220C3 /* ImageView+Load.swift */; };
 		95548834215FC53400C220C3 /* UIImageView+FillColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95548833215FC53400C220C3 /* UIImageView+FillColor.swift */; };
 		95548836215FC78200C220C3 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95548835215FC78200C220C3 /* UIViewController+Alert.swift */; };
+		9554883D215FD39C00C220C3 /* SortType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9554883C215FD39C00C220C3 /* SortType.swift */; };
+		95548845215FE21D00C220C3 /* database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95548843215FE21D00C220C3 /* database.xcdatamodeld */; };
+		9554885C215FE97A00C220C3 /* PhoneDataAccessObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9554885B215FE97A00C220C3 /* PhoneDataAccessObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +68,9 @@
 		95548831215FC44000C220C3 /* ImageView+Load.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+Load.swift"; sourceTree = "<group>"; };
 		95548833215FC53400C220C3 /* UIImageView+FillColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+FillColor.swift"; sourceTree = "<group>"; };
 		95548835215FC78200C220C3 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		9554883C215FD39C00C220C3 /* SortType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortType.swift; sourceTree = "<group>"; };
+		95548844215FE21D00C220C3 /* database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = database.xcdatamodel; sourceTree = "<group>"; };
+		9554885B215FE97A00C220C3 /* PhoneDataAccessObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneDataAccessObject.swift; sourceTree = "<group>"; };
 		E774C66574BB7EEAAF1D1393 /* Pods-awesomPhone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-awesomPhone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-awesomPhone/Pods-awesomPhone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,10 +116,8 @@
 		955487EB215FA2DD00C220C3 /* awesomPhone */ = {
 			isa = PBXGroup;
 			children = (
+				95548842215FD73F00C220C3 /* databases */,
 				95548816215FAC3E00C220C3 /* commons */,
-				95548806215FA4CA00C220C3 /* reducers */,
-				95548805215FA4AA00C220C3 /* states */,
-				95548804215FA47500C220C3 /* actions */,
 				95548802215FA45000C220C3 /* extensions */,
 				95548801215FA44800C220C3 /* protocols */,
 				95548800215FA44100C220C3 /* services */,
@@ -141,6 +145,7 @@
 			children = (
 				9554882B215FB97E00C220C3 /* PhoneModel.swift */,
 				9554882D215FBB8500C220C3 /* PhoneImageModel.swift */,
+				9554883C215FD39C00C220C3 /* SortType.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -188,27 +193,6 @@
 			path = storyboards;
 			sourceTree = "<group>";
 		};
-		95548804215FA47500C220C3 /* actions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = actions;
-			sourceTree = "<group>";
-		};
-		95548805215FA4AA00C220C3 /* states */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = states;
-			sourceTree = "<group>";
-		};
-		95548806215FA4CA00C220C3 /* reducers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = reducers;
-			sourceTree = "<group>";
-		};
 		95548816215FAC3E00C220C3 /* commons */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,6 +234,15 @@
 				95548827215FB76300C220C3 /* PhoneRouter.swift */,
 			);
 			path = routers;
+			sourceTree = "<group>";
+		};
+		95548842215FD73F00C220C3 /* databases */ = {
+			isa = PBXGroup;
+			children = (
+				95548843215FE21D00C220C3 /* database.xcdatamodeld */,
+				9554885B215FE97A00C220C3 /* PhoneDataAccessObject.swift */,
+			);
+			path = databases;
 			sourceTree = "<group>";
 		};
 		97280A86F27DB9873F0D1E8B /* Frameworks */ = {
@@ -342,14 +335,12 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -386,8 +377,11 @@
 				95548814215FAC1500C220C3 /* AllViewModel.swift in Sources */,
 				9554881A215FAC8800C220C3 /* PhoneTableViewCell.swift in Sources */,
 				9554881D215FB01F00C220C3 /* UITableView+ReusableView.swift in Sources */,
+				9554883D215FD39C00C220C3 /* SortType.swift in Sources */,
+				95548845215FE21D00C220C3 /* database.xcdatamodeld in Sources */,
 				95548823215FB69800C220C3 /* FavoriteTableViewController.swift in Sources */,
 				95548828215FB76300C220C3 /* PhoneRouter.swift in Sources */,
+				9554885C215FE97A00C220C3 /* PhoneDataAccessObject.swift in Sources */,
 				95548812215FAC0000C220C3 /* AllTableViewController.swift in Sources */,
 				9554882C215FB97E00C220C3 /* PhoneModel.swift in Sources */,
 				95548834215FC53400C220C3 /* UIImageView+FillColor.swift in Sources */,
@@ -601,6 +595,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		95548843215FE21D00C220C3 /* database.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				95548844215FE21D00C220C3 /* database.xcdatamodel */,
+			);
+			currentVersion = 95548844215FE21D00C220C3 /* database.xcdatamodel */;
+			path = database.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 955487E1215FA2DD00C220C3 /* Project object */;
 }

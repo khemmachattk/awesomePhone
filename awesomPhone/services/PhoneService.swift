@@ -34,6 +34,7 @@ extension PhoneService {
             
             do {
                 let phones = try Mapper<PhoneModel>().mapArray(JSONArray: value)
+                PhoneDataAccessObject.shared.createOrUpdate(phones)
                 completion(phones, nil)
             } catch {
                 completion(nil, ResponseError(message: "Parse json error"))
@@ -41,8 +42,8 @@ extension PhoneService {
         }
     }
     
-    func fetchPhoneImages(id: Int, completion: @escaping FetchPhoneImages) {
-        Alamofire.request(PhoneRouter.phoneImages(id: id)).responseJSON { response in
+    func fetchPhoneImages(phoneId: Int, completion: @escaping FetchPhoneImages) {
+        Alamofire.request(PhoneRouter.phoneImages(id: phoneId)).responseJSON { response in
             if (!response.result.isSuccess) {
                 completion(nil, ResponseError(message: "Server error"))
             }
@@ -54,6 +55,7 @@ extension PhoneService {
             
             do {
                 let images = try Mapper<PhoneImageModel>().mapArray(JSONArray: value)
+                PhoneDataAccessObject.shared.createOrUpdate(images, to: phoneId)
                 completion(images, nil)
             } catch {
                 completion(nil, ResponseError(message: "Parse json error"))

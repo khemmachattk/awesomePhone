@@ -17,7 +17,25 @@ struct PhoneModel {
     let description: String
     let brand: String
     let rating: Double
-    let imagePaths: [String] = []
+    let imagePaths: [String]
+    let isFavorite: Bool
+    
+    init(entity: PhoneEntity) {
+        id = Int(entity.id)
+        thumbImageURL = entity.thumbImageURL!
+        price = entity.price
+        name = entity.name!
+        description = entity.descriptionText!
+        brand = entity.brand!
+        rating = entity.rating
+        isFavorite = entity.isFavorite
+        
+        let imageEntities: [PhoneImageEntity] = entity.images?.allObjects as! [PhoneImageEntity]
+        imagePaths = imageEntities.map { imageEntity in
+            imageEntity.url!
+        }
+        
+    }
 }
 
 // MARK: - Mappable
@@ -30,5 +48,7 @@ extension PhoneModel: ImmutableMappable {
         description = try map.value("description")
         brand = try map.value("brand")
         rating = try map.value("rating")
+        imagePaths = []
+        isFavorite = false
     }
 }

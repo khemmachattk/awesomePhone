@@ -34,8 +34,8 @@ extension PhoneTableViewCell {
         thumbnailImageView.load(item.thumbnailUrl)
         titleLabel.text = item.title
         descriptionLabel.text = item.description
-        priceLabel.text = "Price: $\(item.price)"
-        ratingLabel.text = "Rating: \(item.rating)"
+        priceLabel.text = "Price: $\(String(format: "%g", item.price))"
+        ratingLabel.text = "Rating: \(String(format: "%g", item.rating))"
         favoriteImageView.fillColor(with: item.isFavorite ? .blue : .lightGray)
     }
 }
