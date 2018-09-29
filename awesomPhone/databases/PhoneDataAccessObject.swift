@@ -20,6 +20,8 @@ class PhoneDataAccessObject {
         return appDelegate.persistentContainer.viewContext
     }
     
+    private var sortType = SortType.none
+    
     private init() {}
 }
 
@@ -100,9 +102,21 @@ extension PhoneDataAccessObject {
         
         let result = try! manageContext.fetch(request)
         
-        return result.map { phoneEntity in
-            phoneEntity.toModel()
-        }
+        return result
+            .map { phoneEntity in
+                phoneEntity.toModel()
+            }.sorted(by: { (previous, next) in
+                switch sortType {
+                case .none:
+                    return previous.id < next.id
+                case .priceHightToLow:
+                    return previous.price > next.price
+                case .priceLowToHigh:
+                    return previous.price < next.price
+                case .rating:
+                    return previous.rating > next.rating
+                }
+            })
     }
     
     func fetchPhone(id: Int) -> PhoneModel? {
@@ -111,6 +125,10 @@ extension PhoneDataAccessObject {
         }
         
         return phoneEntity.toModel()
+    }
+    
+    func changeSort(_ type: SortType) {
+        sortType = type
     }
 }
 
