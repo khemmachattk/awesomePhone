@@ -110,4 +110,21 @@ private extension AllViewController {
     @objc func refresh() {
         fetchAllPhones()
     }
+    
+    @IBAction func sort(_ sender: Any) {
+        presentAlrt(title: "Sort", actions: [
+            UIAlertAction(title: "Price (low to high)", style: .default, handler: { [weak self] _ in
+                self?.viewModel.sort(type: .priceLowToHigh)
+                self?.tableView.reloadData()
+            }),
+            UIAlertAction(title: "Price (high to low)", style: .default, handler: { [weak self] _ in
+                self?.viewModel.sort(type: .priceHightToLow)
+                self?.tableView.reloadData()
+            }),
+            UIAlertAction(title: "Rating (5 to 1)", style: .default, handler: { [weak self] _ in
+                self?.viewModel.sort(type: .rating)
+                self?.tableView.reloadData()
+            })
+            ])
+    }
 }

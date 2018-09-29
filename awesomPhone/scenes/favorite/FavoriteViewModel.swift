@@ -15,10 +15,7 @@ class FavoriteViewModel {
 // MARK: - Update view model
 extension FavoriteViewModel {
     func updateItems(_ phones: [PhoneModel]) {
-        items = phones
-            .sorted(by: { (previous, next) in
-                previous.id < next.id
-            }).map { phone in
+        items = phones.map { phone in
                 PhoneTableViewCell.CellItem(
                     identifier: "\(phone.id)",
                     thumbnailUrl: phone.thumbImageURL,
@@ -44,6 +41,12 @@ extension FavoriteViewModel {
         let phone = PhoneDataAccessObject.shared.fetchPhone(id: phoneId)!
         
         PhoneDataAccessObject.shared.favorite(false, phoneId: phone.id)
+        
+        loadStoreFavoritePhones()
+    }
+    
+    func sort(type: SortType) {
+        PhoneDataAccessObject.shared.changeSort(type)
         
         loadStoreFavoritePhones()
     }

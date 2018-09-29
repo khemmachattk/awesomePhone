@@ -21,7 +21,13 @@
                             <outlet property="delegate" destination="LSF-MI-s6e" id="uvW-C4-I4j"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Favorites" id="P7H-JZ-aF9"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="P7H-JZ-aF9">
+                        <barButtonItem key="rightBarButtonItem" title="Sort" id="w43-ai-RdO">
+                            <connections>
+                                <action selector="sort:" destination="LSF-MI-s6e" id="hR2-xv-LCg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M3h-8G-Usd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

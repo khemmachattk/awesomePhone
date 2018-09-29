@@ -17,4 +17,12 @@ extension UIViewController {
         
         present(alert, animated: true, completion: nil)
     }
+    
+    func presentAlrt(title: String, actions: [UIAlertAction]) {
+        let actionSheet = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        actions.forEach { actionSheet.addAction($0) }
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(actionSheet, animated: true, completion: nil)
+    }
 }

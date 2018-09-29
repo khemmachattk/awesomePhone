@@ -15,10 +15,7 @@ class AllViewModel {
 // MARK: - Update view model
 extension AllViewModel {
     func updateItems(_ phones: [PhoneModel]) {
-        items = phones
-            .sorted(by: { (previous, next) in
-                previous.id < next.id
-            }).map { phone in
+        items = phones.map { phone in
                 PhoneTableViewCell.CellItem(
                     identifier: "\(phone.id)",
                     thumbnailUrl: phone.thumbImageURL,
@@ -48,6 +45,12 @@ extension AllViewModel {
         let phone = PhoneDataAccessObject.shared.fetchPhone(id: phoneId)!
         
         PhoneDataAccessObject.shared.favorite(!phone.isFavorite, phoneId: phone.id)
+        
+        loadStorePhones()
+    }
+    
+    func sort(type: SortType) {
+        PhoneDataAccessObject.shared.changeSort(type)
         
         loadStorePhones()
     }
