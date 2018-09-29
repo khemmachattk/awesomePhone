@@ -75,8 +75,9 @@ extension ImageCarouselView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCarouselCollectionViewCell.defaultReuseIdentifier,
-                                                      for: indexPath) as! ImageCarouselCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: ImageCarouselCollectionViewCell.defaultReuseIdentifier,
+            for: indexPath) as! ImageCarouselCollectionViewCell
         
         configure(cell, at: indexPath)
         
@@ -89,7 +90,7 @@ extension ImageCarouselView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         return CGSize(width: UIScreen.main.bounds.width,
-                      height: collectionView.frame.size.height - 1)
+                      height: collectionView.frame.size.height)
     }
 }
 
