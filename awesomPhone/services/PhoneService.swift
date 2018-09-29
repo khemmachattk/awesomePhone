@@ -22,7 +22,7 @@ class PhoneService {
 // MARK: -
 extension PhoneService {
     func fetchAllPhones(completion: @escaping FetchAllPhonesCompletion) {
-        let storePhones = PhoneDataAccessObject.shared.fetchPhones(isFavorite: false)
+        let storePhones = PhoneDataAccessObject.shared.fetchPhones()
         
         if (!storePhones.isEmpty) {
             completion(storePhones, nil)

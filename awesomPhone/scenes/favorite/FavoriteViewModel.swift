@@ -15,24 +15,36 @@ class FavoriteViewModel {
 // MARK: - Update view model
 extension FavoriteViewModel {
     func updateItems(_ phones: [PhoneModel]) {
-        items = phones.map { phone in
-            PhoneTableViewCell.CellItem(
-                identifier: "\(phone.id)",
-                thumbnailUrl: phone.thumbImageURL,
-                title: phone.name,
-                description: phone.description,
-                price: phone.price,
-                rating: phone.rating,
-                isFavorite: false)
+        items = phones
+            .sorted(by: { (previous, next) in
+                previous.id < next.id
+            }).map { phone in
+                PhoneTableViewCell.CellItem(
+                    identifier: "\(phone.id)",
+                    thumbnailUrl: phone.thumbImageURL,
+                    title: phone.name,
+                    description: phone.description,
+                    price: phone.price,
+                    rating: phone.rating,
+                    isFavorite: nil)
         }
     }
 }
 
 // MARK: - Service
 extension FavoriteViewModel {
-    func fetchFavoritePhones() {
+    func loadStoreFavoritePhones() {
         let favoritePhones = PhoneDataAccessObject.shared.fetchPhones(isFavorite: true)
         
         updateItems(favoritePhones)
+    }
+    
+    func unFavorite(index: Int) {
+        let phoneId = Int(items[index].identifier)!
+        let phone = PhoneDataAccessObject.shared.fetchPhone(id: phoneId)!
+        
+        PhoneDataAccessObject.shared.favorite(false, phoneId: phone.id)
+        
+        loadStoreFavoritePhones()
     }
 }

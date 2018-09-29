@@ -15,6 +15,12 @@ class AllViewController: UITableViewController {
         super.viewDidLoad()
         
         setupView()
+        fetchAllPhones()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         updateView()
     }
 }
@@ -38,7 +44,8 @@ private extension AllViewController {
 // MARK: - Update view
 private extension AllViewController {
     func updateView() {
-        fetchAllPhones()
+        viewModel.loadStorePhones()
+        tableView.reloadData()
     }
     
     func fetchAllPhones() {
@@ -67,7 +74,7 @@ private extension AllViewController {
     }
 }
 
-// MARK: - Datasource
+// MARK: - Delegate and Datasource
 extension AllViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.items.count

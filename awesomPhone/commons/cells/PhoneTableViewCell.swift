@@ -36,7 +36,8 @@ extension PhoneTableViewCell {
         descriptionLabel.text = item.description
         priceLabel.text = "Price: $\(String(format: "%g", item.price))"
         ratingLabel.text = "Rating: \(String(format: "%g", item.rating))"
-        favoriteImageView.fillColor(with: item.isFavorite ? .blue : .lightGray)
+        favoriteImageView.isHidden = item.isFavorite == nil
+        favoriteImageView.fillColor(with: item.isFavorite == true ? .blue : .lightGray)
     }
 }
 
@@ -59,6 +60,6 @@ extension PhoneTableViewCell {
         let description: String
         let price: Double
         let rating: Double
-        var isFavorite: Bool
+        var isFavorite: Bool?
     }
 }

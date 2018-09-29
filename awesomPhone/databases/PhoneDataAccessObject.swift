@@ -38,7 +38,7 @@ extension PhoneDataAccessObject {
         
         try! manageContext.save()
         
-        return fetchPhones(isFavorite: false)
+        return fetchPhones()
     }
     
     func createOrUpdate(_ images: [PhoneImageModel], to phoneId: Int) -> PhoneModel? {
@@ -70,6 +70,8 @@ extension PhoneDataAccessObject {
         }
         
         phoneEntity.isFavorite = isFavorite
+        
+        try! manageContext.save()
     }
     
     func fetchPhoneEntity(id: Int) -> PhoneEntity? {
@@ -90,9 +92,11 @@ extension PhoneDataAccessObject {
         return result.first
     }
     
-    func fetchPhones(isFavorite: Bool) -> [PhoneModel] {
+    func fetchPhones(isFavorite: Bool = false) -> [PhoneModel] {
         let request: NSFetchRequest = PhoneEntity.fetchRequest()
-        request.predicate = NSPredicate(format: "isFavorite = %d", isFavorite)
+        if isFavorite {
+            request.predicate = NSPredicate(format: "isFavorite = %d", isFavorite)
+        }
         
         let result = try! manageContext.fetch(request)
         
