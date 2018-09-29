@@ -33,9 +33,18 @@ extension FavoriteViewModel {
 
 // MARK: - Service
 extension FavoriteViewModel {
-    func fetchFavoritePhones() {
+    func loadStoreFavoritePhones() {
         let favoritePhones = PhoneDataAccessObject.shared.fetchPhones(isFavorite: true)
         
         updateItems(favoritePhones)
+    }
+    
+    func unFavorite(index: Int) {
+        let phoneId = Int(items[index].identifier)!
+        let phone = PhoneDataAccessObject.shared.fetchPhone(id: phoneId)!
+        
+        PhoneDataAccessObject.shared.favorite(false, phoneId: phone.id)
+        
+        loadStoreFavoritePhones()
     }
 }

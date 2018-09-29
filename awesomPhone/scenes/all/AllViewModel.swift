@@ -33,16 +33,23 @@ extension AllViewModel {
 
 // MARK: - Service
 extension AllViewModel {
+    func loadStorePhones() {
+        let favoritePhones = PhoneDataAccessObject.shared.fetchPhones()
+        
+        updateItems(favoritePhones)
+    }
+    
     func fetchAllPhones(completion: @escaping PhoneService.FetchAllPhonesCompletion) {
         PhoneService.shared.fetchAllPhones(completion: completion)
     }
     
-    func favorite(phoneId: Int) {
+    func favorite(index: Int) {
+        let phoneId = Int(items[index].identifier)!
         let phone = PhoneDataAccessObject.shared.fetchPhone(id: phoneId)!
         
         PhoneDataAccessObject.shared.favorite(!phone.isFavorite, phoneId: phone.id)
         
-        updateItems(PhoneDataAccessObject.shared.fetchPhones())
+        loadStorePhones()
     }
 }
 

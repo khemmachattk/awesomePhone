@@ -38,12 +38,12 @@ private extension FavoriteTableViewController {
 // MARK: - Update view
 private extension FavoriteTableViewController {
     func updateView() {
-        viewModel.fetchFavoritePhones()
+        viewModel.loadStoreFavoritePhones()
         tableView.reloadData()
     }
 }
 
-// MARK: - Datasource
+// MARK: - Delegate and Datasource
 extension FavoriteTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.items.count
@@ -57,6 +57,19 @@ extension FavoriteTableViewController {
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        switch editingStyle {
+        case .delete:
+            unFavorite(at: indexPath)
+        default:
+            break
+        }
+    }
 }
 
 // MARK: - Configure view and cell
@@ -68,6 +81,14 @@ private extension FavoriteTableViewController {
         default:
             break
         }
+    }
+}
+
+// MARK: - Action
+private extension FavoriteTableViewController {
+    func unFavorite(at indexPath: IndexPath) {
+        viewModel.unFavorite(index: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
     }
 }
 
