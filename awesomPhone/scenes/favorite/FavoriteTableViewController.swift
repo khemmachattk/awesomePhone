@@ -70,6 +70,12 @@ extension FavoriteTableViewController {
             break
         }
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = viewModel.items[indexPath.row]
+        
+        performSegue(withIdentifier: Segue.detail.rawValue, sender: item.identifier)
+    }
 }
 
 // MARK: - Configure view and cell
@@ -109,3 +115,23 @@ private extension FavoriteTableViewController {
     }
 }
 
+// MARK: - Segue and Navigation
+extension FavoriteTableViewController {
+    enum Segue: String {
+        case detail = "detailSegue"
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let segueIdentifier = segue.identifier
+            , let segueType = Segue(rawValue: segueIdentifier) else {
+            return
+        }
+        
+        switch (segueType, segue.destination, sender) {
+        case (.detail, let destination as DetailViewController, let phoneId as String):
+            destination.configure(phoneId: Int(phoneId)!)
+        default:
+            break
+        }
+    }
+}
