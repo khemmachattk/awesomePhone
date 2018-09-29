@@ -7,7 +7,6 @@ target 'awesomPhone' do
 
   # Pods for awesomPhone
   pod 'Alamofire', '~> 4'
-  pod 'ReSwift', '~> 4'
   pod 'ObjectMapper', '~> 3'
   pod 'Kingfisher', '~> 4'
 

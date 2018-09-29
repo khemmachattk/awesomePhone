@@ -9,8 +9,6 @@ protocol Routable: URLRequestConvertible {
     var path: String { get }
     var method: HTTPMethod { get }
     var parameters: Parameters? { get }
-    var headers: Dictionary<String, String>? { get }
-    var version: Int { get }
 }
 
 extension Routable {
@@ -19,12 +17,6 @@ extension Routable {
         var request = URLRequest(url: url.appendingPathComponent(path))
         
         request.httpMethod = method.rawValue
-        
-        if let headers = headers {
-            for (key, value) in headers {
-                request.addValue(value, forHTTPHeaderField: key)
-            }
-        }
         
         return try URLEncoding.default.encode(request, with: parameters)
     }
