@@ -23,10 +23,15 @@ class AllViewController: UITableViewController {
 private extension AllViewController {
     func setupView() {
         setupTableView()
+        setupRefreshView()
     }
     
     func setupTableView() {
         tableView.register(PhoneTableViewCell.self)
+    }
+    
+    func setupRefreshView() {
+        refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
     }
 }
 
@@ -37,7 +42,11 @@ private extension AllViewController {
     }
     
     func fetchAllPhones() {
+        startLoading()
+        
         viewModel.fetchAllPhones { [weak self] (phones, error) in
+            self?.stopLoading()
+            
             guard let phones = phones, error == nil else {
                 self?.presentAlert(title: "Error", message: error!.message)
                 return
@@ -46,6 +55,15 @@ private extension AllViewController {
             self?.viewModel.updateItems(phones)
             self?.tableView.reloadData()
         }
+    }
+    
+    func startLoading() {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+    
+    func stopLoading() {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        refreshControl?.endRefreshing()
     }
 }
 
@@ -77,5 +95,12 @@ private extension AllViewController {
         default:
             break
         }
+    }
+}
+
+// MARK: - Action
+private extension AllViewController {
+    @objc func refresh() {
+        fetchAllPhones()
     }
 }

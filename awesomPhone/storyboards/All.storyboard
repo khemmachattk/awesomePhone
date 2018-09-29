@@ -22,6 +22,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="All" id="V8l-iP-BTG"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Pwb-FF-tt0">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FLg-Zu-PO7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,6 +8,31 @@
 
 import Foundation
 
-struct FavoriteViewModel {
-    let items: [BaseCellItem] = []
+class FavoriteViewModel {
+    var items: [BaseCellItem] = []
+}
+
+// MARK: - Update view model
+extension FavoriteViewModel {
+    func updateItems(_ phones: [PhoneModel]) {
+        items = phones.map { phone in
+            PhoneTableViewCell.CellItem(
+                identifier: "\(phone.id)",
+                thumbnailUrl: phone.thumbImageURL,
+                title: phone.name,
+                description: phone.description,
+                price: phone.price,
+                rating: phone.rating,
+                isFavorite: false)
+        }
+    }
+}
+
+// MARK: - Service
+extension FavoriteViewModel {
+    func fetchFavoritePhones() {
+        let favoritePhones = PhoneDataAccessObject.shared.fetchPhones(isFavorite: true)
+        
+        updateItems(favoritePhones)
+    }
 }

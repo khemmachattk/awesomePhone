@@ -10,11 +10,17 @@ import UIKit
 
 class FavoriteTableViewController: UITableViewController {
     private var viewModel = FavoriteViewModel()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        updateView()
     }
 }
 
@@ -26,6 +32,14 @@ private extension FavoriteTableViewController {
     
     func setupTableView() {
         tableView.register(PhoneTableViewCell.self)
+    }
+}
+
+// MARK: - Update view
+private extension FavoriteTableViewController {
+    func updateView() {
+        viewModel.fetchFavoritePhones()
+        tableView.reloadData()
     }
 }
 
