@@ -39,6 +39,7 @@ private extension AllViewController {
     func fetchAllPhones() {
         viewModel.fetchAllPhones { [weak self] (phones, error) in
             guard let phones = phones, error == nil else {
+                self?.presentAlert(title: "Error", message: error!.message)
                 return
             }
             
@@ -58,7 +59,7 @@ extension AllViewController {
         let item = viewModel.items[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: item.cellIdentifier, for: indexPath)
         
-        configure(cell, with: item)
+        configure(cell, with: item, at: indexPath)
         
         return cell
     }
@@ -66,11 +67,12 @@ extension AllViewController {
 
 // MARK: - Configure view and cell
 private extension AllViewController {
-    func configure(_ cell: UITableViewCell, with item: BaseCellItem) {
+    func configure(_ cell: UITableViewCell, with item: BaseCellItem, at indexPath: IndexPath) {
         switch (cell, item) {
         case (let cell as PhoneTableViewCell, let item as PhoneTableViewCell.CellItem):
-            cell.configure(item: item, favoriteHandler: { cell in
-                
+            cell.configure(item: item, favoriteHandler: { [weak self] cell in
+                self?.viewModel.favorite(index: indexPath.row)
+                self?.tableView.reloadRows(at: [indexPath], with: .none)
             })
         default:
             break

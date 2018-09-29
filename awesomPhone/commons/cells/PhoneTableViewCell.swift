@@ -59,6 +59,6 @@ extension PhoneTableViewCell {
         let description: String
         let price: Double
         let rating: Double
-        let isFavorite: Bool
+        var isFavorite: Bool
     }
 }

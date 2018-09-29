@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct AllViewModel {
+class AllViewModel {
     var items: [BaseCellItem] = []
 }
 
 // MARK: - Update view model
 extension AllViewModel {
-    mutating func updateItems(_ phones: [PhoneModel]) {
+    func updateItems(_ phones: [PhoneModel]) {
         items = phones.map { phone in
             PhoneTableViewCell.CellItem(
                 identifier: "\(phone.id)",
@@ -30,8 +30,18 @@ extension AllViewModel {
 
 // MARK: - Service
 extension AllViewModel {
-    mutating func fetchAllPhones(completion: @escaping PhoneService.FetchAllPhonesCompletion) {
+    func fetchAllPhones(completion: @escaping PhoneService.FetchAllPhonesCompletion) {
         PhoneService.shared.fetchAllPhones(completion: completion)
+    }
+    
+    func favorite(index: Int) {
+        switch items[index] {
+        case var item as PhoneTableViewCell.CellItem:
+            item.isFavorite = !item.isFavorite
+            items[index] = item
+        default:
+            break
+        }
     }
 }
 
