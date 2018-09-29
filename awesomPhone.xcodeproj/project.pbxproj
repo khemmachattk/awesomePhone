@@ -14,6 +14,9 @@
 		955487F7215FA2DE00C220C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955487F5215FA2DE00C220C3 /* LaunchScreen.storyboard */; };
 		95548808215FA5AC00C220C3 /* phoneList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95548807215FA5AC00C220C3 /* phoneList.storyboard */; };
 		9554880A215FA5BA00C220C3 /* favorite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95548809215FA5BA00C220C3 /* favorite.storyboard */; };
+		9554880D215FA84800C220C3 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9554880B215FA84800C220C3 /* NibLoadableView.swift */; };
+		9554880E215FA84800C220C3 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9554880C215FA84800C220C3 /* ReusableView.swift */; };
+		95548810215FA8EA00C220C3 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9554880F215FA8EA00C220C3 /* BaseRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +30,9 @@
 		955487F8215FA2DE00C220C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95548807215FA5AC00C220C3 /* phoneList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = phoneList.storyboard; sourceTree = "<group>"; };
 		95548809215FA5BA00C220C3 /* favorite.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = favorite.storyboard; sourceTree = "<group>"; };
+		9554880B215FA84800C220C3 /* NibLoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
+		9554880C215FA84800C220C3 /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		9554880F215FA8EA00C220C3 /* BaseRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
 		E774C66574BB7EEAAF1D1393 /* Pods-awesomPhone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-awesomPhone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-awesomPhone/Pods-awesomPhone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,9 +88,8 @@
 				955487FE215FA43600C220C3 /* scenes */,
 				95548803215FA46600C220C3 /* storyboards */,
 				955487EC215FA2DD00C220C3 /* AppDelegate.swift */,
-				955487F3215FA2DE00C220C3 /* Assets.xcassets */,
-				955487F5215FA2DE00C220C3 /* LaunchScreen.storyboard */,
 				955487F8215FA2DE00C220C3 /* Info.plist */,
+				955487F3215FA2DE00C220C3 /* Assets.xcassets */,
 			);
 			path = awesomPhone;
 			sourceTree = "<group>";
@@ -113,6 +118,9 @@
 		95548801215FA44800C220C3 /* protocols */ = {
 			isa = PBXGroup;
 			children = (
+				9554880F215FA8EA00C220C3 /* BaseRouter.swift */,
+				9554880B215FA84800C220C3 /* NibLoadableView.swift */,
+				9554880C215FA84800C220C3 /* ReusableView.swift */,
 			);
 			path = protocols;
 			sourceTree = "<group>";
@@ -127,6 +135,7 @@
 		95548803215FA46600C220C3 /* storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				955487F5215FA2DE00C220C3 /* LaunchScreen.storyboard */,
 				955487F0215FA2DD00C220C3 /* Main.storyboard */,
 				95548807215FA5AC00C220C3 /* phoneList.storyboard */,
 				95548809215FA5BA00C220C3 /* favorite.storyboard */,
@@ -174,6 +183,7 @@
 				955487E5215FA2DD00C220C3 /* Sources */,
 				955487E6215FA2DD00C220C3 /* Frameworks */,
 				955487E7215FA2DD00C220C3 /* Resources */,
+				5D8421790EA99997D69EA6D5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,6 +243,30 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5D8421790EA99997D69EA6D5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-awesomPhone/Pods-awesomPhone-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-awesomPhone/Pods-awesomPhone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D873353D4F778227418B65AC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -258,7 +292,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9554880E215FA84800C220C3 /* ReusableView.swift in Sources */,
+				9554880D215FA84800C220C3 /* NibLoadableView.swift in Sources */,
 				955487ED215FA2DD00C220C3 /* AppDelegate.swift in Sources */,
+				95548810215FA8EA00C220C3 /* BaseRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
