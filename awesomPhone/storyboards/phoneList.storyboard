@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YZR-Wg-pa4">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Awesome Phone-->
+        <scene sceneID="hcs-Zd-Y3Q">
+            <objects>
+                <tableViewController id="lgK-1o-0Nu" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="R1B-Pl-5rd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <connections>
+                            <outlet property="dataSource" destination="lgK-1o-0Nu" id="ZrS-TB-KM9"/>
+                            <outlet property="delegate" destination="lgK-1o-0Nu" id="7RU-4g-F9U"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Awesome Phone" id="V8l-iP-BTG"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FLg-Zu-PO7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1036" y="92.203898050974516"/>
+        </scene>
+        <!--All-->
+        <scene sceneID="R1v-Vv-edF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YZR-Wg-pa4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="All" image="list" id="o22-QU-uHA"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="J54-zB-akD">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lgK-1o-0Nu" kind="relationship" relationship="rootViewController" id="cfe-Yq-Qld"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HzJ-78-B6O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="96.799999999999997" y="92.203898050974516"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="list" width="30" height="30"/>
+    </resources>
+</document>

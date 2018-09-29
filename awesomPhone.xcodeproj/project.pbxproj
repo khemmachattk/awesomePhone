@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		29A76691D8E7ED01DC30DDBA /* Pods_awesomPhone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436513F7E118B6E605CDC7A1 /* Pods_awesomPhone.framework */; };
 		955487ED215FA2DD00C220C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955487EC215FA2DD00C220C3 /* AppDelegate.swift */; };
-		955487EF215FA2DD00C220C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955487EE215FA2DD00C220C3 /* ViewController.swift */; };
 		955487F2215FA2DD00C220C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955487F0215FA2DD00C220C3 /* Main.storyboard */; };
 		955487F4215FA2DE00C220C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 955487F3215FA2DE00C220C3 /* Assets.xcassets */; };
 		955487F7215FA2DE00C220C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955487F5215FA2DE00C220C3 /* LaunchScreen.storyboard */; };
+		95548808215FA5AC00C220C3 /* phoneList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95548807215FA5AC00C220C3 /* phoneList.storyboard */; };
+		9554880A215FA5BA00C220C3 /* favorite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95548809215FA5BA00C220C3 /* favorite.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,11 +21,12 @@
 		50C2D69F7678D32DA4F294B2 /* Pods-awesomPhone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-awesomPhone.release.xcconfig"; path = "Pods/Target Support Files/Pods-awesomPhone/Pods-awesomPhone.release.xcconfig"; sourceTree = "<group>"; };
 		955487E9215FA2DD00C220C3 /* awesomPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = awesomPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		955487EC215FA2DD00C220C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		955487EE215FA2DD00C220C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		955487F1215FA2DD00C220C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		955487F3215FA2DE00C220C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		955487F6215FA2DE00C220C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		955487F8215FA2DE00C220C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95548807215FA5AC00C220C3 /* phoneList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = phoneList.storyboard; sourceTree = "<group>"; };
+		95548809215FA5BA00C220C3 /* favorite.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = favorite.storyboard; sourceTree = "<group>"; };
 		E774C66574BB7EEAAF1D1393 /* Pods-awesomPhone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-awesomPhone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-awesomPhone/Pods-awesomPhone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,14 +72,87 @@
 		955487EB215FA2DD00C220C3 /* awesomPhone */ = {
 			isa = PBXGroup;
 			children = (
+				95548806215FA4CA00C220C3 /* reducers */,
+				95548805215FA4AA00C220C3 /* states */,
+				95548804215FA47500C220C3 /* actions */,
+				95548802215FA45000C220C3 /* extensions */,
+				95548801215FA44800C220C3 /* protocols */,
+				95548800215FA44100C220C3 /* services */,
+				955487FF215FA43C00C220C3 /* models */,
+				955487FE215FA43600C220C3 /* scenes */,
+				95548803215FA46600C220C3 /* storyboards */,
 				955487EC215FA2DD00C220C3 /* AppDelegate.swift */,
-				955487EE215FA2DD00C220C3 /* ViewController.swift */,
-				955487F0215FA2DD00C220C3 /* Main.storyboard */,
 				955487F3215FA2DE00C220C3 /* Assets.xcassets */,
 				955487F5215FA2DE00C220C3 /* LaunchScreen.storyboard */,
 				955487F8215FA2DE00C220C3 /* Info.plist */,
 			);
 			path = awesomPhone;
+			sourceTree = "<group>";
+		};
+		955487FE215FA43600C220C3 /* scenes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = scenes;
+			sourceTree = "<group>";
+		};
+		955487FF215FA43C00C220C3 /* models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		95548800215FA44100C220C3 /* services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		95548801215FA44800C220C3 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
+		95548802215FA45000C220C3 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		95548803215FA46600C220C3 /* storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				955487F0215FA2DD00C220C3 /* Main.storyboard */,
+				95548807215FA5AC00C220C3 /* phoneList.storyboard */,
+				95548809215FA5BA00C220C3 /* favorite.storyboard */,
+			);
+			path = storyboards;
+			sourceTree = "<group>";
+		};
+		95548804215FA47500C220C3 /* actions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = actions;
+			sourceTree = "<group>";
+		};
+		95548805215FA4AA00C220C3 /* states */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = states;
+			sourceTree = "<group>";
+		};
+		95548806215FA4CA00C220C3 /* reducers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = reducers;
 			sourceTree = "<group>";
 		};
 		97280A86F27DB9873F0D1E8B /* Frameworks */ = {
@@ -148,8 +223,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				955487F7215FA2DE00C220C3 /* LaunchScreen.storyboard in Resources */,
+				95548808215FA5AC00C220C3 /* phoneList.storyboard in Resources */,
 				955487F4215FA2DE00C220C3 /* Assets.xcassets in Resources */,
 				955487F2215FA2DD00C220C3 /* Main.storyboard in Resources */,
+				9554880A215FA5BA00C220C3 /* favorite.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,7 +258,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				955487EF215FA2DD00C220C3 /* ViewController.swift in Sources */,
 				955487ED215FA2DD00C220C3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
