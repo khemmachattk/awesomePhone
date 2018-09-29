@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Awesome Phone-->
+        <!--All-->
         <scene sceneID="hcs-Zd-Y3Q">
             <objects>
-                <tableViewController id="lgK-1o-0Nu" sceneMemberID="viewController">
+                <tableViewController id="lgK-1o-0Nu" customClass="AllViewController" customModule="awesomPhone" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="R1B-Pl-5rd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,7 +21,10 @@
                             <outlet property="delegate" destination="lgK-1o-0Nu" id="7RU-4g-F9U"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Awesome Phone" id="V8l-iP-BTG"/>
+                    <navigationItem key="navigationItem" title="All" id="V8l-iP-BTG"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Pwb-FF-tt0">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FLg-Zu-PO7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
