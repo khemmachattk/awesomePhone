@@ -26,7 +26,7 @@ extension FavoriteViewModel {
                     description: phone.description,
                     price: phone.price,
                     rating: phone.rating,
-                    isFavorite: phone.isFavorite)
+                    isFavorite: nil)
         }
     }
 }
