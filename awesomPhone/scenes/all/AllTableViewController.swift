@@ -89,7 +89,7 @@ private extension AllViewController {
         switch (cell, item) {
         case (let cell as PhoneTableViewCell, let item as PhoneTableViewCell.CellItem):
             cell.configure(item: item, favoriteHandler: { [weak self] cell in
-                self?.viewModel.favorite(index: indexPath.row)
+                self?.viewModel.favorite(phoneId: Int(item.identifier)!)
                 self?.tableView.reloadRows(at: [indexPath], with: .none)
             })
         default:

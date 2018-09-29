@@ -15,15 +15,18 @@ class FavoriteViewModel {
 // MARK: - Update view model
 extension FavoriteViewModel {
     func updateItems(_ phones: [PhoneModel]) {
-        items = phones.map { phone in
-            PhoneTableViewCell.CellItem(
-                identifier: "\(phone.id)",
-                thumbnailUrl: phone.thumbImageURL,
-                title: phone.name,
-                description: phone.description,
-                price: phone.price,
-                rating: phone.rating,
-                isFavorite: false)
+        items = phones
+            .sorted(by: { (previous, next) in
+                previous.id < next.id
+            }).map { phone in
+                PhoneTableViewCell.CellItem(
+                    identifier: "\(phone.id)",
+                    thumbnailUrl: phone.thumbImageURL,
+                    title: phone.name,
+                    description: phone.description,
+                    price: phone.price,
+                    rating: phone.rating,
+                    isFavorite: phone.isFavorite)
         }
     }
 }
